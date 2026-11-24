@@ -1,0 +1,193 @@
+/* Podium Flash - identite de marque (voir CLAUDE.md) */
+:root {
+  --fond: #0E1222;
+  --fond-carte: #171C33;
+  --fond-bord: #272E4D;
+  --accent: #FFD23F;
+  --texte: #FFFFFF;
+  --texte-doux: #B8BFD6;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.enveloppe {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- En-tete --- */
+header {
+  border-bottom: 1px solid var(--fond-bord);
+  padding: 20px 0;
+}
+
+.barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--texte);
+}
+.marque:hover { text-decoration: none; }
+.marque .eclair { color: var(--accent); font-size: 26px; line-height: 1; }
+
+nav { display: flex; gap: 22px; font-size: 15px; }
+nav a { color: var(--texte-doux); }
+nav a:hover { color: var(--accent); }
+nav a[aria-current="page"] { color: var(--accent); }
+
+/* --- Heros --- */
+.heros {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--fond-bord);
+}
+
+.heros .etiquette {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: clamp(38px, 7vw, 60px);
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.heros p.chapeau {
+  font-size: 20px;
+  color: var(--texte-doux);
+  margin: 0 0 32px;
+  max-width: 600px;
+}
+
+.boutons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.bouton {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid var(--accent);
+}
+.bouton:hover { text-decoration: none; }
+.bouton.plein { background: var(--accent); color: var(--fond); }
+.bouton.plein:hover { filter: brightness(1.1); }
+.bouton.vide { color: var(--accent); }
+.bouton.vide:hover { background: rgba(255, 210, 63, 0.1); }
+
+/* --- Sections --- */
+main section { padding: 56px 0; border-bottom: 1px solid var(--fond-bord); }
+main section:last-of-type { border-bottom: none; }
+
+h2 {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 36px 0 10px;
+  color: var(--texte);
+}
+
+p { margin: 0 0 16px; }
+p.doux { color: var(--texte-doux); }
+
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 10px; }
+
+strong { color: var(--texte); font-weight: 700; }
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.carte {
+  background: var(--fond-carte);
+  border: 1px solid var(--fond-bord);
+  border-radius: 10px;
+  padding: 22px;
+}
+.carte h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--accent);
+}
+.carte p { margin: 0; font-size: 15px; color: var(--texte-doux); }
+
+.encadre {
+  background: var(--fond-carte);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+.encadre p:last-child { margin-bottom: 0; }
+
+.date-maj {
+  font-size: 14px;
+  color: var(--texte-doux);
+  margin: 0 0 36px;
+}
+
+/* --- Pied de page --- */
+footer {
+  border-top: 1px solid var(--fond-bord);
+  padding: 32px 0 48px;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+footer nav { gap: 18px; margin-bottom: 12px; font-size: 14px; }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .heros { padding: 48px 0 40px; }
+  .heros p.chapeau { font-size: 18px; }
+}
